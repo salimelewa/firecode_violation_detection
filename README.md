@@ -1,6 +1,6 @@
 # firecode_violation_detection
 
-A new Flutter project.
+This application is meant for fire code violation detection. Users will be able to scan their doorways for any possible fire code violations and identify any potentional compromises. 
 
 ## Getting Started
 
