@@ -1,7 +1,5 @@
 name: firecode_violation_detection
 description: A new Flutter project.
-firebase_auth: ^0.14.0+5
-firebase_dynamic_links: ^0.5.1
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
