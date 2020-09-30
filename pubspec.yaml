@@ -1,5 +1,7 @@
 name: firecode_violation_detection
 description: A new Flutter project.
+firebase_auth: ^0.14.0+5
+firebase_dynamic_links: ^0.5.1
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
@@ -24,10 +26,11 @@ dependencies:
   flutter:
     sdk: flutter
 
-
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.3
+  firebase_auth: ^0.14.0+5
+  cloud_firestore: ^0.12.9+4
 
 dev_dependencies:
   flutter_test:

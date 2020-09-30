@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "690300287040",
+    "firebase_url": "https://firecode-violation-detection.firebaseio.com",
+    "project_id": "firecode-violation-detection",
+    "storage_bucket": "firecode-violation-detection.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:690300287040:android:a0a80aabfbc0ba58dfc7a5",
+        "android_client_info": {
+          "package_name": "com.salimelewa.firecode_violation_detection"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "690300287040-bikkba4qsup47csshlc5jap184td9p1e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDswoCjdFxKMzl992EQGI6lHIqqL23dcLg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "690300287040-bikkba4qsup47csshlc5jap184td9p1e.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "690300287040-125mc7vr5r9qsut7vqeepu9l6s5d15lr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.firecodeViolationDetection"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
