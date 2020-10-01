@@ -81,7 +81,7 @@ class _RegisterState extends State<Register> {
                         ),
                         onPressed: () async {
                           if (_formKey.currentState.validate()) {
-                            setState(() => loading = true);
+                            setState(() => loading = false);
                             dynamic result =
                                 await _auth.registerWithEmail(email, password);
                             if (result == null) {
