@@ -1,4 +1,5 @@
 import 'package:firecode_violation_detection/services/auth.dart';
+import 'package:firecode_violation_detection/shared/constants.dart';
 import 'package:flutter/material.dart';
 
 class Register extends StatefulWidget {
@@ -46,14 +47,8 @@ class _RegisterState extends State<Register> {
                   SizedBox(height: 40.0),
                   TextFormField(
                     validator: (val) => val.isEmpty ? 'Enter an Email' : null,
-                    decoration: InputDecoration(
-                      labelText: 'Email',
-                      border: new OutlineInputBorder(
-                        borderRadius: const BorderRadius.all(
-                          const Radius.circular(10.0),
-                        ),
-                      ),
-                    ),
+                    decoration:
+                        textInputDecoration.copyWith(labelText: 'Email'),
                     keyboardType: TextInputType.emailAddress,
                     onChanged: (val) {
                       setState(() => email = val);
@@ -64,20 +59,14 @@ class _RegisterState extends State<Register> {
                     validator: (val) => val.length < 6
                         ? 'Enter a password 6+ chars long'
                         : null,
-                    decoration: InputDecoration(
-                      labelText: 'Password',
-                      border: new OutlineInputBorder(
-                        borderRadius: const BorderRadius.all(
-                          const Radius.circular(10.0),
-                        ),
-                      ),
-                    ),
+                    decoration:
+                        textInputDecoration.copyWith(labelText: 'Password'),
                     obscureText: true,
                     onChanged: (val) {
                       setState(() => password = val);
                     },
                   ),
-                  SizedBox(height: 20.0),
+                  SizedBox(height: 5.0),
                   RaisedButton(
                     color: Colors.black,
                     child: Text(
