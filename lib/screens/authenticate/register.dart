@@ -2,6 +2,10 @@ import 'package:firecode_violation_detection/services/auth.dart';
 import 'package:flutter/material.dart';
 
 class Register extends StatefulWidget {
+  final Function toggleView;
+
+  const Register({this.toggleView});
+
   @override
   _RegisterState createState() => _RegisterState();
 }
@@ -18,9 +22,18 @@ class _RegisterState extends State<Register> {
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          backgroundColor: Colors.black,
+          backgroundColor: Colors.black54,
           elevation: 0.0,
           title: Text('Sign Up'),
+          actions: <Widget>[
+            FlatButton.icon(
+              icon: Icon(Icons.person),
+              label: Text('Login'),
+              onPressed: () {
+                widget.toggleView();
+              },
+            )
+          ],
         ),
         body: Container(
             padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
