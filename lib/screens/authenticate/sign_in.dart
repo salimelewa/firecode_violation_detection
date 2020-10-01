@@ -12,6 +12,7 @@ class SignIn extends StatefulWidget {
 
 class _SignInState extends State<SignIn> {
   final AuthService _auth = AuthService();
+  final _formKey = GlobalKey<FormState>();
 
   //text field state
   String email = '';
@@ -42,6 +43,7 @@ class _SignInState extends State<SignIn> {
                 children: <Widget>[
                   SizedBox(height: 40.0),
                   TextFormField(
+                    validator: (val) => val.isEmpty ? 'Enter an Email' : null,
                     decoration: InputDecoration(
                       labelText: 'Email',
                       border: new OutlineInputBorder(
@@ -57,6 +59,7 @@ class _SignInState extends State<SignIn> {
                   ),
                   SizedBox(height: 20.0),
                   TextFormField(
+                    validator: (val) => val.isEmpty ? 'Enter a password' : null,
                     decoration: InputDecoration(
                       labelText: 'Password',
                       border: new OutlineInputBorder(
@@ -78,8 +81,10 @@ class _SignInState extends State<SignIn> {
                       style: TextStyle(color: Colors.white),
                     ),
                     onPressed: () async {
-                      print(email);
-                      print(password);
+                      if (_formKey.currentState.validate()) {
+                        print(email);
+                        print(password);
+                      }
                     },
                   )
                 ],
