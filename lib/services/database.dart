@@ -17,4 +17,9 @@ class DatabaseService {
       'numViolations': numViolations,
     });
   }
+
+  //get buidlings stream
+  Stream<QuerySnapshot> get buildings {
+    return buildingCollection.snapshots();
+  }
 }
