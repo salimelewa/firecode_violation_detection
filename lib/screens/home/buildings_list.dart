@@ -1,8 +1,8 @@
-aimport 'package:firecode_violation_detection/models/building.dart';
+import 'package:firecode_violation_detection/models/building.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-taimport 'package:firecode_violation_detection/screens/home/building_tile.dart';
+import 'package:firecode_violation_detection/screens/home/building_tile.dart';
 
 class BuildingList extends StatefulWidget {
   @override
