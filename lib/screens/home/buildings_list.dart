@@ -1,5 +1,5 @@
+import 'package:firecode_violation_detection/models/building.dart';
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:provider/provider.dart';
 
 class BuildingList extends StatefulWidget {
@@ -10,11 +10,12 @@ class BuildingList extends StatefulWidget {
 class _BuildingListState extends State<BuildingList> {
   @override
   Widget build(BuildContext context) {
-    final buildings = Provider.of<QuerySnapshot>(context);
-    //print(buildings.documents);
-    for (var doc in buildings.documents) {
-      print(doc.data);
-    }
+    final buildings = Provider.of<List<Building>>(context);
+    buildings.forEach((building) {
+      print(building.buildingName);
+      print(building.numFloors);
+    });
+
     return Container();
   }
 }
