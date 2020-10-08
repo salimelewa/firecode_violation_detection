@@ -6,7 +6,7 @@ import 'package:firecode_violation_detection/services/database.dart';
 import 'package:provider/provider.dart';
 import 'package:firecode_violation_detection/screens/home/buildings_list.dart';
 
-class Home extends StatelessWidget {
+class BuildingsView extends StatelessWidget {
   final AuthService _auth = AuthService();
 
   @override

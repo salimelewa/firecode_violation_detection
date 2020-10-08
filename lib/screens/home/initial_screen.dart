@@ -1,4 +1,4 @@
-import 'package:firecode_violation_detection/screens/home/home.dart';
+import 'package:firecode_violation_detection/screens/home/buildings_view.dart';
 import 'package:flutter/material.dart';
 
 /// This is the main application widget.
@@ -28,8 +28,8 @@ class MyStatelessWidget extends StatelessWidget {
             width: 200,
             child: RaisedButton(
               onPressed: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => Home()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => BuildingsView()));
               },
               child: Text('Buildings',
                   style: TextStyle(fontSize: 13, fontFamily: 'Roboto')),
