@@ -1,5 +1,8 @@
+import 'package:firecode_violation_detection/models/user.dart';
+import 'package:firecode_violation_detection/services/database.dart';
 import 'package:flutter/material.dart';
 import 'package:firecode_violation_detection/shared/constants.dart';
+import 'package:provider/provider.dart';
 
 class SettingsForm extends StatefulWidget {
   @override
@@ -34,17 +37,17 @@ class _SettingsFormState extends State<SettingsForm> {
           ),
           SizedBox(height: 20.0),
           //dropdown
-          DropdownButtonFormField(
-            decoration: textInputDecoration,
-            value: _numViolations ?? '0',
-            items: testing.map((testing) {
-              return DropdownMenuItem(
-                value: testing,
-                child: Text('$testing'),
-              );
-            }).toList(),
-            onChanged: (val) => setState(() => _numViolations = val),
-          ),
+          // DropdownButtonFormField(
+          //   decoration: textInputDecoration,
+          //   value: _numViolations ?? '0',
+          //   items: testing.map((testing) {
+          //     return DropdownMenuItem(
+          //       value: testing,
+          //       child: Text('$testing'),
+          //     );
+          //   }).toList(),
+          //   onChanged: (val) => setState(() => _numViolations = val),
+          // ),
           RaisedButton(
             color: Colors.black,
             child: Text(
@@ -52,7 +55,10 @@ class _SettingsFormState extends State<SettingsForm> {
               style: TextStyle(color: Colors.white),
             ),
             onPressed: () async {
-              print(_buildingName);
+              await DatabaseService(uid: 'dbJkpmJiXbeKfoD3AFSsNrXhZN33')
+                  .updateUserData(
+                      "pleaswork", 3, {'floor1': '34', 'floor34': '32'}, 13);
+              Navigator.pop(context);
             },
           )
         ],

@@ -19,7 +19,7 @@ class DatabaseService {
     });
   }
 
-  //buiolding list from snapshot
+  //building list from snapshot
   List<Building> _buildingListFromSnapshot(QuerySnapshot snapshot) {
     return snapshot.documents.map((doc) {
       return Building(

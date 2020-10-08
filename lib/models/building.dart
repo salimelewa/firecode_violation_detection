@@ -1,7 +1,7 @@
 class Building {
   final String buildingName;
   final int numFloors;
-  final String floorsInfo;
+  final Map floorsInfo;
   final int numViolations;
 
   Building(
