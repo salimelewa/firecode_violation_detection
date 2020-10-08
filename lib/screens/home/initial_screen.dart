@@ -1,3 +1,4 @@
+import 'package:firecode_violation_detection/screens/home/add_building.dart';
 import 'package:firecode_violation_detection/screens/home/buildings_view.dart';
 import 'package:flutter/material.dart';
 
@@ -40,7 +41,10 @@ class MyStatelessWidget extends StatelessWidget {
           SizedBox(
             width: 200,
             child: RaisedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => AddBuilding()));
+              },
               child: Text('Add Buildings',
                   style: TextStyle(fontSize: 13, fontFamily: 'Roboto')),
               textColor: Colors.black,
