@@ -14,7 +14,17 @@ class DatabaseService {
     return await buildingCollection.document(uid).setData({
       'buidlingname': buildingName,
       'numfloors': numFloors,
-      'floorsInfo': floorsInfo,
+      'floorsInfo': floorsInfo ?? '',
+      'numViolations': numViolations,
+    });
+  }
+
+  Future addBuildingData(String buildingName, int numFloors, Map floorsInfo,
+      int numViolations) async {
+    return await buildingCollection.document(uid).setData({
+      'buidlingname': buildingName,
+      'numfloors': numFloors,
+      'floorsInfo': floorsInfo ?? '',
       'numViolations': numViolations,
     });
   }
