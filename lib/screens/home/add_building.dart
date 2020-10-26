@@ -12,7 +12,7 @@ class AddBuilding extends StatefulWidget {
 
   @override
   _AddBuildingState createState() => _AddBuildingState();
-  initState() {}
+  //initState() {}
 }
 
 class _AddBuildingState extends State<AddBuilding> {
@@ -33,7 +33,10 @@ class _AddBuildingState extends State<AddBuilding> {
     '10'
   ];
 
-  var _numFloors;
+  String buildingName = '';
+  int numFloors = 0;
+  int numViolations = 0;
+
   var randomizer = new Random();
 
   @override
@@ -59,7 +62,8 @@ class _AddBuildingState extends State<AddBuilding> {
                                 val.isEmpty ? 'Enter a building name.' : null,
                             decoration: textInputDecoration.copyWith(
                                 labelText: 'Building Name'),
-                            onChanged: (val) {}),
+                            onChanged: (val) =>
+                                setState(() => buildingName = val)),
                       ),
                       SizedBox(height: 5.0),
                       SizedBox(
@@ -75,7 +79,8 @@ class _AddBuildingState extends State<AddBuilding> {
                               child: Text('$floors'),
                             );
                           }).toList(),
-                          onChanged: (val) => setState(() => _numFloors = val),
+                          onChanged: (val) =>
+                              setState(() => numFloors = int.parse(val)),
                         ),
                       ),
                       // for (int i = 0; i < int.parse(_numFloors.toString()); i++)
@@ -99,7 +104,9 @@ class _AddBuildingState extends State<AddBuilding> {
                             decoration: textInputDecoration.copyWith(
                                 labelText: '# of violations'),
                             keyboardType: TextInputType.number,
-                            onChanged: (val) {}),
+                            onChanged: (val) {
+                              setState(() => numViolations = int.parse(val));
+                            }),
                       ),
                       SizedBox(
                         height: 40,
@@ -112,11 +119,9 @@ class _AddBuildingState extends State<AddBuilding> {
                             textAlign: TextAlign.center,
                           ),
                           onPressed: () async {
-                            await DatabaseService(uid: '').updateUserData(
-                                "Buildingnames",
-                                3,
-                                {'floor1': '34', 'floor34': '32'},
-                                13);
+                            await DatabaseService(uid: '$buildingName')
+                                .updateUserData(
+                                    buildingName, numFloors, {}, numViolations);
                           },
                         ),
                       )
