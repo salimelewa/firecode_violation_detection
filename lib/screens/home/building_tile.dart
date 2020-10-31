@@ -1,3 +1,4 @@
+import 'package:firecode_violation_detection/screens/home/add_building.dart';
 import 'package:flutter/material.dart';
 import 'package:firecode_violation_detection/models/building.dart';
 
@@ -7,6 +8,7 @@ class BuildingTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    debugPrint(building.buildingName.toString());
     return Padding(
         padding: EdgeInsets.only(top: 8),
         child: Card(
@@ -19,6 +21,10 @@ class BuildingTile extends StatelessWidget {
               title: Text(building.buildingName),
               subtitle:
                   Text('There is ${building.numViolations} violation(s).'),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => AddBuilding()));
+              },
             )));
   }
 }

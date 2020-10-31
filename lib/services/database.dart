@@ -22,7 +22,7 @@ class DatabaseService {
   Future addBuildingData(String buildingName, int numFloors, Map floorsInfo,
       int numViolations) async {
     return await buildingCollection.document(uid).setData({
-      'buidlingname': buildingName,
+      'buildingname': buildingName,
       'numfloors': numFloors,
       'floorsInfo': floorsInfo ?? '',
       'numViolations': numViolations,
@@ -33,8 +33,8 @@ class DatabaseService {
   List<Building> _buildingListFromSnapshot(QuerySnapshot snapshot) {
     return snapshot.documents.map((doc) {
       return Building(
-          buildingName: doc.data['buildingName'] ?? '',
-          numFloors: doc.data['numFloors'] ?? 0,
+          buildingName: doc.data['buildingname'] ?? '',
+          numFloors: doc.data['numfloors'] ?? 0,
           floorsInfo: doc.data['floorsInfo'] ?? '',
           numViolations: doc.data['numViolations'] ?? 0);
     }).toList();
