@@ -1,4 +1,4 @@
-import 'package:firecode_violation_detection/screens/home/add_building.dart';
+import 'package:firecode_violation_detection/screens/home/building_details.dart';
 import 'package:flutter/material.dart';
 import 'package:firecode_violation_detection/models/building.dart';
 
@@ -22,8 +22,14 @@ class BuildingTile extends StatelessWidget {
               subtitle:
                   Text('There is ${building.numViolations} violation(s).'),
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => AddBuilding()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => BuildingDetails(),
+                      settings: RouteSettings(
+                        arguments: building,
+                      ),
+                    ));
               },
             )));
   }
