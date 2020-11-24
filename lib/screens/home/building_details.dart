@@ -1,7 +1,5 @@
 import 'package:firecode_violation_detection/models/building.dart';
-import 'package:firecode_violation_detection/screens/home/open_camera.dart';
-import 'package:firecode_violation_detection/services/auth.dart';
-import 'package:firecode_violation_detection/services/database.dart';
+import 'package:firecode_violation_detection/screens/home/violation_detection.dart';
 import 'package:firecode_violation_detection/shared/loading.dart';
 import 'package:flutter/material.dart';
 import 'package:firecode_violation_detection/shared/constants.dart';
@@ -17,7 +15,6 @@ class BuildingDetails extends StatefulWidget {
 }
 
 class _BuildingDetailsState extends State<BuildingDetails> {
-  final AuthService _auth = AuthService();
   final _formKey = GlobalKey<FormState>();
   bool loading = false;
 
@@ -116,9 +113,8 @@ class _BuildingDetailsState extends State<BuildingDetails> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => OpenCamera(
-                                          camera: null,
-                                        )));
+                                    builder: (context) =>
+                                        ViolationDetection()));
                           },
                         ),
                       )
